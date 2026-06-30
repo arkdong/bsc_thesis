@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesis"] 1782676176.79497 "thesis.aux" "thesis.bbl" "thesis" 1782688018.57426 0
-  "./references.bib" 1782668906 63736 1415df444ba40bce910567090e99e8b1 ""
+["bibtex thesis"] 1782855902.85146 "thesis.aux" "thesis.bbl" "thesis" 1782855904.55391 0
+  "./references.bib" 1782853273.04316 65307 4369539037a3181439682e556d39e7e1 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/bibtex/bst/base/plain.bst" 1772380719 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesis.aux" 1782688018.42321 14395 524fd53e7edbdc83a177b529510c7281 "pdflatex"
+  "thesis.aux" 1782855904.3792 15407 73cca154df8b7947b549e9319b0325d1 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
   (rewritten before read)
-["pdflatex"] 1782688017.17531 "/Users/adamdong/project/BSc_CS_Thesis/thesis.tex" "thesis.pdf" "thesis" 1782688018.57438 0
-  "/Users/adamdong/project/BSc_CS_Thesis/thesis.tex" 1782688016.9816 79378 9cd1739958cc74f56c854057d9af9822 ""
+["pdflatex"] 1782855902.91124 "/Users/adamdong/project/BSc_CS_Thesis/thesis.tex" "thesis.pdf" "thesis" 1782855904.55403 0
+  "/Users/adamdong/project/BSc_CS_Thesis/thesis.tex" 1782855899.31566 70670 90bb942e6491fc35aaf8553d7cf8bf0e ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1772380719 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/map/fontname/texfonts.map" 1772380719 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1772380719 5541360 f183aac233c4cd1e5ef882fcbe8e7096 ""
@@ -51,7 +51,6 @@
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1772380719 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1772380719 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1772380719 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
-  "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1772380719 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1772380719 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1772380719 36281 c355509802a035cadc5f15869451dcee ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1772380719 35469 70d41d2b9ea31d5d813066df7c99281c ""
@@ -69,7 +68,6 @@
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1772380719 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1772380719 32716 08e384dc442464e7285e891af9f45947 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1772380719 37944 359e864bd06cde3b1cf57bb20757fb06 ""
-  "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1772380719 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb" 1772380719 149037 995a6f1e12c1d647b99b1cf55db78699 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1772380719 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1772380719 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -145,11 +143,11 @@
   "figures/as/07_episode_cash_pnl.png" 1782668906 207872 93e1e64a6228594afa2e4f48131489ec ""
   "figures/as/08_episode_skew_inventory_relationship.png" 1782668906 69078 ee521afaa3b6a9bfeeaf8c08a2a94f06 ""
   "logoUvA_en.pdf" 1782668906 9956 8b484410a3b005c3081765caf4d4e6dd ""
-  "thesis.aux" 1782688018.42321 14395 524fd53e7edbdc83a177b529510c7281 "pdflatex"
-  "thesis.bbl" 1782676176.83928 9278 a791ec24e74ee43e64ca2bb28473c1ae "bibtex thesis"
-  "thesis.out" 1782688018.42438 5711 2934cc87f01a9ba7c6d48033de373af2 "pdflatex"
-  "thesis.tex" 1782688016.9816 79378 9cd1739958cc74f56c854057d9af9822 ""
-  "thesis.toc" 1782688018.4251 2634 e59b42db7b29068a6917f354cd252d34 "pdflatex"
+  "thesis.aux" 1782855904.3792 15407 73cca154df8b7947b549e9319b0325d1 "pdflatex"
+  "thesis.bbl" 1782855902.90896 9542 936fdbd90485c15caa3394b86c694285 "bibtex thesis"
+  "thesis.out" 1782855904.38024 6942 27edc49a1e0de35b1433dd5c4eb11d3f "pdflatex"
+  "thesis.tex" 1782855899.31566 70670 90bb942e6491fc35aaf8553d7cf8bf0e ""
+  "thesis.toc" 1782855904.38047 3121 a154bcc8736581c8335cb85444689399 "pdflatex"
   "uva-inf-bachelor-thesis.cls" 1782668906 2037 f571c2f0edf471afd2ac7fce71f44f55 ""
   (generated)
   "thesis.aux"

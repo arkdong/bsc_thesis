@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  29 JUN 2026 01:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Homebrew) (preloaded format=pdflatex 2026.3.4)  30 JUN 2026 23:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -420,7 +420,7 @@ Package hyperref Info: Link coloring OFF on input line 24.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logoUvA_en.pdf, id=116, 258.9675pt x 28.01506pt>
+<logoUvA_en.pdf, id=136, 258.9675pt x 28.01506pt>
 File: logoUvA_en.pdf Graphic file (type pdf)
 <use logoUvA_en.pdf>
 Package pdftex.def Info: logoUvA_en.pdf  used on input line 25.
@@ -462,9 +462,6 @@ Overfull \hbox (4.44745pt too wide) in paragraph at lines 72--74
 []\OT1/cmr/bx/n/10 Market-making be-haviour: \OT1/cmr/m/n/10 How does in-creas-ing the mar-ket maker's quadratic inventory-
  []
 
-
-LaTeX Warning: Reference `sec:almgren_chriss' on page 7 undefined on input line 108.
-
 [7] [8] [9]
 Chapter 2.
 [10
@@ -497,48 +494,48 @@ Chapter 5.
 [20
 
 ]
-<figures/as/01_midprice_sample_path.png, id=356, 786.38794pt x 364.9635pt>
+<figures/as/01_midprice_sample_path.png, id=384, 786.38794pt x 364.9635pt>
 File: figures/as/01_midprice_sample_path.png Graphic file (type png)
 <use figures/as/01_midprice_sample_path.png>
-Package pdftex.def Info: figures/as/01_midprice_sample_path.png  used on input line 749.
+Package pdftex.def Info: figures/as/01_midprice_sample_path.png  used on input line 562.
 (pdftex.def)             Requested size: 313.69025pt x 145.58185pt.
  [21 <./figures/as/01_midprice_sample_path.png>]
-<figures/as/02_fill_probability_vs_distance.png, id=368, 714.56963pt x 364.9635pt>
+<figures/as/02_fill_probability_vs_distance.png, id=396, 714.56963pt x 364.9635pt>
 File: figures/as/02_fill_probability_vs_distance.png Graphic file (type png)
 <use figures/as/02_fill_probability_vs_distance.png>
-Package pdftex.def Info: figures/as/02_fill_probability_vs_distance.png  used on input line 758.
+Package pdftex.def Info: figures/as/02_fill_probability_vs_distance.png  used on input line 571.
 (pdftex.def)             Requested size: 313.69025pt x 160.21689pt.
-<figures/as/03_log_arrival_intensity_fit.png, id=370, 858.20625pt x 341.02406pt>
+<figures/as/03_log_arrival_intensity_fit.png, id=398, 858.20625pt x 341.02406pt>
 File: figures/as/03_log_arrival_intensity_fit.png Graphic file (type png)
 <use figures/as/03_log_arrival_intensity_fit.png>
-Package pdftex.def Info: figures/as/03_log_arrival_intensity_fit.png  used on input line 767.
+Package pdftex.def Info: figures/as/03_log_arrival_intensity_fit.png  used on input line 580.
 (pdftex.def)             Requested size: 313.69025pt x 124.65227pt.
-<figures/as/04_daily_volatility_distribution.png, id=372, 642.29962pt x 366.31856pt>
+<figures/as/04_daily_volatility_distribution.png, id=400, 642.29962pt x 366.31856pt>
 File: figures/as/04_daily_volatility_distribution.png Graphic file (type png)
 <use figures/as/04_daily_volatility_distribution.png>
-Package pdftex.def Info: figures/as/04_daily_volatility_distribution.png  used on input line 776.
+Package pdftex.def Info: figures/as/04_daily_volatility_distribution.png  used on input line 589.
 (pdftex.def)             Requested size: 334.60422pt x 190.83328pt.
  [22{/opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./figures/as/02_fill_probability_vs_distance.png> <./figures/as/03_log_arrival_intensity_fit.png>]
-<figures/as/05_episode_quotes.png, id=388, 858.65794pt x 567.3195pt>
+<figures/as/05_episode_quotes.png, id=416, 858.65794pt x 567.3195pt>
 File: figures/as/05_episode_quotes.png Graphic file (type png)
 <use figures/as/05_episode_quotes.png>
-Package pdftex.def Info: figures/as/05_episode_quotes.png  used on input line 813.
+Package pdftex.def Info: figures/as/05_episode_quotes.png  used on input line 626.
 (pdftex.def)             Requested size: 409.88681pt x 270.82133pt.
-<figures/as/06_episode_inventory.png, id=390, 858.65794pt x 567.3195pt>
+<figures/as/06_episode_inventory.png, id=418, 858.65794pt x 567.3195pt>
 File: figures/as/06_episode_inventory.png Graphic file (type png)
 <use figures/as/06_episode_inventory.png>
-Package pdftex.def Info: figures/as/06_episode_inventory.png  used on input line 822.
+Package pdftex.def Info: figures/as/06_episode_inventory.png  used on input line 635.
 (pdftex.def)             Requested size: 409.88681pt x 270.82133pt.
  [23 <./figures/as/04_daily_volatility_distribution.png>] [24 <./figures/as/05_episode_quotes.png> <./figures/as/06_episode_inventory.png>]
-<figures/as/07_episode_cash_pnl.png, id=407, 859.10962pt x 639.5895pt>
+<figures/as/07_episode_cash_pnl.png, id=435, 859.10962pt x 639.5895pt>
 File: figures/as/07_episode_cash_pnl.png Graphic file (type png)
 <use figures/as/07_episode_cash_pnl.png>
-Package pdftex.def Info: figures/as/07_episode_cash_pnl.png  used on input line 831.
+Package pdftex.def Info: figures/as/07_episode_cash_pnl.png  used on input line 644.
 (pdftex.def)             Requested size: 409.88681pt x 305.15495pt.
-<figures/as/08_episode_skew_inventory_relationship.png, id=409, 641.84793pt x 408.3255pt>
+<figures/as/08_episode_skew_inventory_relationship.png, id=437, 641.84793pt x 408.3255pt>
 File: figures/as/08_episode_skew_inventory_relationship.png Graphic file (type png)
 <use figures/as/08_episode_skew_inventory_relationship.png>
-Package pdftex.def Info: figures/as/08_episode_skew_inventory_relationship.png  used on input line 844.
+Package pdftex.def Info: figures/as/08_episode_skew_inventory_relationship.png  used on input line 657.
 (pdftex.def)             Requested size: 355.51817pt x 226.1685pt.
  [25 <./figures/as/07_episode_cash_pnl.png>] (./thesis.bbl [26 <./figures/as/08_episode_skew_inventory_relationship.png>] [27
 
@@ -547,26 +544,22 @@ Package pdftex.def Info: figures/as/08_episode_skew_inventory_relationship.png  
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2934CC87F01A9BA7C6D48033DE373AF2;5711.
+(rerunfilecheck)             Checksum: 27EDC49A1E0DE35B1433DD5C4EB11D3F;6942.
  ) 
 Here is how much of TeX's memory you used:
- 13494 strings out of 467525
- 219349 string characters out of 5408440
- 739610 words of memory out of 5000000
- 42099 multiletter control sequences out of 15000+600000
+ 13502 strings out of 467525
+ 219480 string characters out of 5408440
+ 739691 words of memory out of 5000000
+ 42105 multiletter control sequences out of 15000+600000
  639659 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,11n,98p,1254b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on thesis.pdf (29 pages, 1408776 bytes).
+</opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></opt/homebrew/Cellar/texlive/20260301/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on thesis.pdf (29 pages, 1402541 bytes).
 PDF statistics:
- 581 PDF objects out of 1000 (max. 8388607)
- 474 compressed objects within 5 object streams
- 125 named destinations out of 1000 (max. 500000)
- 270 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 602 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
+ 310 words of extra memory for PDF output out of 10000 (max. 10000000)
 

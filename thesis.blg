@@ -8,45 +8,45 @@ Warning--empty year in byrd_abides_nodate
 Warning--empty journal in chan_electronic_2001
 Warning--empty journal in lim_reinforcement_nodate
 Warning--empty year in lim_reinforcement_nodate
-You've used 35 entries,
+You've used 36 entries,
             2118 wiz_defined-function locations,
-            690 strings with 11705 characters,
-and the built_in function-call counts, 13010 in all, are:
-= -- 1209
-> -- 818
+            693 strings with 11958 characters,
+and the built_in function-call counts, 13398 in all, are:
+= -- 1239
+> -- 856
 < -- 7
-+ -- 326
-- -- 286
-* -- 997
-:= -- 2161
-add.period$ -- 106
-call.type$ -- 35
-change.case$ -- 248
++ -- 341
+- -- 300
+* -- 1028
+:= -- 2229
+add.period$ -- 108
+call.type$ -- 36
+change.case$ -- 258
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 403
-empty$ -- 908
-format.name$ -- 286
-if$ -- 2654
+cite$ -- 41
+duplicate$ -- 410
+empty$ -- 930
+format.name$ -- 300
+if$ -- 2729
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 36
 missing$ -- 22
-newline$ -- 176
-num.names$ -- 70
-pop$ -- 313
+newline$ -- 180
+num.names$ -- 72
+pop$ -- 328
 preamble$ -- 1
-purify$ -- 213
+purify$ -- 222
 quote$ -- 0
-skip$ -- 329
+skip$ -- 337
 stack$ -- 0
-substring$ -- 608
-swap$ -- 89
+substring$ -- 613
+swap$ -- 90
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 140
+type$ -- 144
 warning$ -- 5
-while$ -- 112
-width$ -- 37
-write$ -- 369
+while$ -- 114
+width$ -- 38
+write$ -- 377
 (There were 5 warnings)

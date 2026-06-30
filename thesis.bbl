@@ -50,6 +50,10 @@ Nicholas~Tung Chan and Christian Shelton.
 \newblock April 2001.
 \newblock Accepted: 2004-10-20T20:50:09Z.
 
+\bibitem{de_witt_independent_2020}
+Christian~Schroeder de~Witt, Tarun Gupta, Denys Makoviichuk, Viktor Makoviychuk, Philip H.~S. Torr, Mingfei Sun, and Shimon Whiteson.
+\newblock Is independent learning all you need in the starcraft multi-agent challenge?, 2020.
+
 \bibitem{frey_jax-lob_2023}
 Sascha Frey, Kang Li, Peer Nagy, Silvia Sapora, Chris Lu, Stefan Zohren, Jakob Foerster, and Anisoara Calinescu.
 \newblock {JAX}-{LOB}: {A} {GPU}-{Accelerated} limit order book simulator to unlock large scale reinforcement learning for trading, August 2023.

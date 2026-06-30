@@ -240,298 +240,111 @@ The thesis deliberately does not compare many different risk-sensitive objective
 \chapter{Theoretical background}
 \label{chap:technical_background}
 
+\section{Market Making}
+\label{sec:market_making}
+
+Market making is a liquidity-provision problem in which an agent posts bid and ask
+limit orders and is compensated through the bid--ask spread for supplying immediacy
+\cite{garman_market_1976,ho_optimal_1981}. Let \(b_t\) and \(a_t\) denote the best
+bid and best ask, and define the mid-price as \(m_t=(a_t+b_t)/2\). With cash \(C_t\)
+and inventory \(Q_t\), the marked-to-market portfolio value is \(PV_t=C_t+Q_t m_t\).
+The central risk variable is inventory: asymmetric fills can leave the agent long or
+short, exposing it to future price movements and adverse selection. For this thesis,
+the relevant theoretical point is that inventory is both a state variable and a risk
+exposure. A risk-aware market maker should therefore adjust quotes to reduce large
+positions rather than only maximise immediate spread capture.
+
 \section{The Avellaneda--Stoikov Market-Making Model}
-\label{sec:avellaneda-stoikov}
+\label{sec:avellaneda_stoikov}
 
-The Avellaneda--Stoikov model provides a classical benchmark for inventory-aware market making in a limit order book. In this thesis, it is used not as a full model of real market microstructure, but as the theoretical basis for two ideas: a market maker should skew quotes when inventory becomes imbalanced, and inventory risk can naturally be represented by a quadratic penalty \cite{avellaneda_high-frequency_2008}.
-
-Let \(S_t\) denote the mid-price and \(q_t\) the market maker's inventory. The basic model assumes that the mid-price follows an arithmetic Brownian motion,
-
+The Avellaneda--Stoikov model formalises inventory-aware quoting in a stylised
+continuous-time limit-order-book setting \cite{avellaneda_high-frequency_2008}. In
+the model, the mid-price \(S_t\) follows \(dS_t=\sigma dW_t\), and passive-order
+arrivals decrease with quote distance, commonly written as
+\(\lambda(\delta)=Ae^{-k\delta}\). Under exponential utility of terminal
+marked-to-market wealth, the approximate reservation price is
 \begin{equation}
-    dS_t = \sigma dW_t,
-    \label{eq:as_midprice}
+    r_t = S_t - Q_t\gamma\sigma^2(T-t),
+    \label{eq:as_reservation_price_short}
 \end{equation}
+where \(\gamma\) is the model risk-aversion parameter. A positive inventory lowers
+the reservation price, making selling relatively more attractive; a negative inventory
+has the opposite effect. The certainty-equivalent inventory term is proportional to
+\(-\frac{\gamma}{2}Q_t^2\sigma^2(T-t)\), which gives the theoretical motivation for a
+squared-inventory penalty. The reinforcement-learning coefficient
+\(\rho_{\mathrm{MM}}\) used later is not numerically identical to \(\gamma\); it is a
+discrete reward weight with the same economic role of discouraging excessive
+inventory exposure.
 
-where \(\sigma\) is the volatility. The market maker posts an ask quote \(p_t^a = S_t+\delta_t^a\) and a bid quote \(p_t^b = S_t-\delta_t^b\). Execution probabilities decrease with quote distance from the mid-price. Under the common symmetric exponential specification,
+\section{Order Execution in High-Frequency Trading}
+\label{sec:order_execution}
 
+Order execution concerns the liquidation or acquisition of a fixed parent order over a
+finite horizon. Unlike the market maker, the execution agent is not primarily rewarded
+for two-sided liquidity provision; it must reduce a remaining quantity while controlling
+execution cost. At each decision step, it may use more passive actions, which can
+reduce spread costs but risk non-completion, or more aggressive actions, which
+improve completion probability but may increase slippage. The central risk variable is
+therefore the remaining quantity \(X_t\). A large \(X_t\) indicates continuing exposure
+to price uncertainty and a higher probability of a costly terminal rush.
+
+\section{The Almgren--Chriss Optimal-Execution Model}
+\label{sec:almgren_chriss}
+
+The Almgren--Chriss model provides the classical risk--cost formulation for execution
+\cite{almgren2000}. For a sell program, let \(x_0=X_0\), \(x_N=0\), and
+\(n_k=x_{k-1}-x_k\) denote the amount traded in interval \(k\). With linear impact,
+expected implementation shortfall \(E(x)\) increases with trading speed, while
+execution risk is
 \begin{equation}
-    \lambda^a(\delta)=\lambda^b(\delta)=Ae^{-k\delta},
-    \label{eq:as_intensity}
+    V(x)=\sigma^2\tau\sum_{k=1}^{N}x_k^2.
+    \label{eq:ac_variance_short}
 \end{equation}
+The optimal schedule minimises \(E(x)+\lambda V(x)\), where \(\lambda\geq 0\) is the
+classical execution risk-aversion parameter. Larger \(\lambda\) or volatility \(\sigma\)
+produces a more front-loaded schedule; larger temporary impact \(\eta\) favours slower
+execution, with urgency approximately governed by
+\(\kappa\approx\sqrt{\lambda\sigma^2/\eta}\). This justifies penalising squared
+remaining quantity in the learned execution reward. As with market making,
+\(\rho_{\mathrm{EX}}\) is a discrete RL reward coefficient, not the continuous-time
+parameter \(\lambda\).
 
-where \(A\) controls the overall arrival rate and \(k\) controls how quickly fill probability decreases as quotes are moved away from the mid-price.
+\section{Reinforcement Learning and Independent PPO}
+\label{sec:ippo}
 
-The market maker maximises expected exponential utility of terminal marked-to-market wealth,
+Reinforcement learning represents both trading tasks as sequential decision problems.
+At time \(t\), an agent observes \(o_t\), chooses an action \(a_t\), receives reward
+\(r_t\), and updates a policy \(\pi_\theta(a_t\mid o_t)\) to maximise expected return.
+In the multi-agent case, the next order-book state depends on the joint actions of all
+agents, so each agent learns in an environment partly shaped by the other.
+Independent PPO (IPPO) applies PPO separately to each agent, with separate policy
+and value networks \cite{de_witt_independent_2020}. This is suitable here because
+the market-making and execution agents have different observations, action spaces,
+and rewards, while their realised outcomes remain coupled through the shared limit
+order book.
 
+\section{JaxMARL-HFT as the Experimental Environment}
+\label{sec:jaxmarl_hft}
+
+JaxMARL-HFT provides the replay-based multi-agent limit-order-book environment
+used in this thesis. It extends JaxMARL with a JAX-LOB-based market simulator,
+supports heterogeneous agents, and combines agent-generated orders with historical
+market-by-order messages before matching
+\cite{mohl_jaxmarl-hft_2025,frey_jax-lob_2023,rutherford_jaxmarl_2023}. The
+framework is used as a scalable experimental testbed rather than as a new simulator
+or a complete endogenous market model: the historical background order flow does
+not adapt to the learned agents. The two risk-adjusted rewards studied in the
+experiment are
 \begin{equation}
-    \sup_{\delta^a,\delta^b}
-    \mathbb{E}_t
-    \left[
-        -\exp\left(-\gamma(X_T+q_T S_T)\right)
-    \right],
-    \label{eq:as_objective}
-\end{equation}
-
-where \(X_T\) is terminal cash and \(\gamma>0\) is the risk-aversion parameter. The finite-horizon approximation gives the inventory-adjusted reservation price
-
-\begin{equation}
-    r_t = S_t - q_t\gamma\sigma^2(T-t).
-    \label{eq:as_reservation_price}
-\end{equation}
-
-This is the key inventory-skewing mechanism. If \(q_t>0\), the market maker is long, so the reservation price moves below the mid-price. The ask quote becomes more aggressive and the bid quote less aggressive, encouraging inventory reduction. If \(q_t<0\), the opposite occurs.
-
-With symmetric exponential arrivals, the approximate optimal total spread is
-
-\begin{equation}
-    \psi_t
-    =
-    \gamma\sigma^2(T-t)
-    +
-    \frac{2}{\gamma}
-    \ln\left(1+\frac{\gamma}{k}\right).
-    \label{eq:as_spread}
-\end{equation}
-
-The first term compensates for inventory risk, while the second term reflects execution risk. The corresponding quotes are centred around the reservation price,
-
-\begin{equation}
-    p_t^a = r_t + \frac{\psi_t}{2},
+    r_t^{\mathrm{MM}} = r_{t,\mathrm{base}}^{\mathrm{MM}} - \rho_{\mathrm{MM}}Q_t^2,
     \qquad
-    p_t^b = r_t - \frac{\psi_t}{2}.
-    \label{eq:as_optimal_quotes}
+    r_t^{\mathrm{EX}} = r_{t,\mathrm{base}}^{\mathrm{EX}} - \rho_{\mathrm{EX}}X_t^2
+    - \zeta_{\mathrm{EX}}\mathbf{1}_{\{t=T\}}|X_T|.
+    \label{eq:unified_rl_rewards}
 \end{equation}
-
-Under this approximation, inventory changes the centre of the quotes, while the total spread is independent of inventory.
-
-The same model also motivates the squared-inventory penalty used for the market-making agent in this thesis. The certainty equivalent of holding inventory over the remaining horizon is
-
-\begin{equation}
-    CE_t
-    =
-    X_t + q_t S_t
-    -
-    \frac{\gamma}{2}q_t^2\sigma^2(T-t).
-    \label{eq:as_certainty_equivalent}
-\end{equation}
-
-The final term is quadratic in inventory, showing why large long and short positions become increasingly costly under risk aversion. The thesis therefore uses the Avellaneda--Stoikov model as theoretical motivation for penalising squared inventory in the reinforcement-learning reward. The reward coefficient \(\rho_{MM}\) should not be interpreted as identical to the continuous-time parameter \(\gamma\); it is a discrete reinforcement-learning weight with the same economic role of discouraging excessive inventory exposure.
-
-% \section{The Almgren--Chriss Optimal-Execution Model}
-% \label{sec:almgren_chriss}
-
-% The Almgren--Chriss model is a classical model for optimal order execution. It studies how a trader should buy or sell a large quantity of an asset over a fixed horizon when trading too quickly creates market-impact costs, but trading too slowly leaves the trader exposed to price risk \cite{almgren2000}. In contrast to the market-making problem, where the agent continuously chooses bid and ask quotes, the execution problem starts from a fixed target quantity that must be completed by the end of the episode. The model is therefore directly relevant to the execution agent in this thesis, because it identifies remaining quantity as the central risk variable.
-
-% Consider a sell program. The buy case is analogous with signs reversed. The trader initially holds \(X>0\) shares and must liquidate the full position by time \(T\). The horizon is divided into \(N\) equal intervals of length
-% \begin{equation}
-%     \tau = \frac{T}{N},
-% \end{equation}
-% with trading times \(t_k=k\tau\), for \(k=0,\ldots,N\). A trading trajectory is described by the holdings
-% \begin{equation}
-%     x_0,x_1,\ldots,x_N,
-% \end{equation}
-% where \(x_k\) is the number of shares remaining after time \(t_k\). The boundary conditions are
-% \begin{equation}
-%     x_0 = X, \qquad x_N = 0.
-% \end{equation}
-% The number of shares sold in interval \(k\) is
-% \begin{equation}
-%     n_k = x_{k-1}-x_k, \qquad k=1,\ldots,N.
-% \end{equation}
-% Thus, \(x_k\) represents remaining inventory and \(n_k\) represents the execution slice. For a monotone sell program, \(n_k\geq 0\) for all \(k\).
-
-% The model separates price movements into exogenous volatility and endogenous market impact. Let \(S_k\) denote the reference market price after interval \(k\). The discrete price dynamics are
-% \begin{equation}
-%     S_k
-%     =
-%     S_{k-1}
-%     +
-%     \sigma\sqrt{\tau}\xi_k
-%     -
-%     \tau g\left(\frac{n_k}{\tau}\right),
-%     \label{eq:ac_price_dynamics}
-% \end{equation}
-% where \(\sigma>0\) is the dollar volatility, \(\xi_k\) are independent random variables with mean zero and variance one, and \(g(\cdot)\) is the permanent market-impact function. The trading rate in interval \(k\) is \(v_k=n_k/\tau\). For a sell program, permanent impact pushes the future reference price downward.
-
-% Almgren and Chriss also model temporary market impact. Temporary impact affects the execution price in the current interval but does not directly affect the future reference price. The average execution price in interval \(k\) is
-% \begin{equation}
-%     \widetilde{S}_k
-%     =
-%     S_{k-1}
-%     -
-%     h\left(\frac{n_k}{\tau}\right),
-%     \label{eq:ac_execution_price}
-% \end{equation}
-% where \(h(\cdot)\) is the temporary-impact function. Economically, this term represents crossing the spread, consuming liquidity, and walking down the book when the trade size is large. Permanent impact therefore changes the value of the remaining position, while temporary impact affects only the shares traded in the current interval.
-
-% The implementation shortfall of a sell program is the difference between the initial mark-to-market value and the realised execution revenue:
-% \begin{equation}
-%     C(x)
-%     =
-%     XS_0
-%     -
-%     \sum_{k=1}^{N} n_k \widetilde{S}_k .
-% \end{equation}
-% Substituting Equations \eqref{eq:ac_price_dynamics} and \eqref{eq:ac_execution_price} gives
-% \begin{equation}
-%     C(x)
-%     =
-%     -\sum_{k=1}^{N}\sigma\sqrt{\tau}\xi_k x_k
-%     +
-%     \sum_{k=1}^{N}\tau x_k g\left(\frac{n_k}{\tau}\right)
-%     +
-%     \sum_{k=1}^{N}n_k h\left(\frac{n_k}{\tau}\right).
-%     \label{eq:ac_shortfall}
-% \end{equation}
-% The first term is random and comes from price volatility while inventory is still held. The second term is the cost of permanent impact. The third term is the cost of temporary impact. Since the shocks \(\xi_k\) have mean zero and variance one, the expected shortfall and variance are
-% \begin{equation}
-%     E(x)
-%     =
-%     \sum_{k=1}^{N}\tau x_k g\left(\frac{n_k}{\tau}\right)
-%     +
-%     \sum_{k=1}^{N}n_k h\left(\frac{n_k}{\tau}\right),
-%     \label{eq:ac_expected_cost}
-% \end{equation}
-% and
-% \begin{equation}
-%     V(x)
-%     =
-%     \sigma^2
-%     \sum_{k=1}^{N}\tau x_k^2.
-%     \label{eq:ac_variance}
-% \end{equation}
-% Equation \eqref{eq:ac_variance} is the key theoretical connection to this thesis. It shows that timing risk is proportional to the time integral of squared remaining quantity. A trader who leaves a large part of the order unfinished for many periods faces higher uncertainty in final execution cost.
-
-% The most common version of the model assumes linear market impact. To avoid a notation conflict with the Avellaneda--Stoikov risk-aversion parameter \(\gamma\) used in Section~\ref{sec:avellaneda-stoikov}, this section denotes the permanent-impact coefficient by \(\gamma_{\mathrm{impact}}\):
-% \begin{equation}
-%     g(v)=\gamma_{\mathrm{impact}} v,
-%     \label{eq:ac_linear_permanent}
-% \end{equation}
-% and
-% \begin{equation}
-%     h(v)=\epsilon \operatorname{sgn}(v)+\eta v.
-%     \label{eq:ac_linear_temporary}
-% \end{equation}
-% Here, \(\gamma_{\mathrm{impact}}\geq 0\) is the permanent-impact coefficient, \(\eta>0\) is the temporary-impact coefficient, and \(\epsilon\geq 0\) is a fixed per-share cost, often interpreted as half the bid--ask spread plus fees. Under monotone trading, the expected cost becomes
-% \begin{equation}
-%     E(x)
-%     =
-%     \frac{1}{2}\gamma_{\mathrm{impact}} X^2
-%     +
-%     \epsilon X
-%     +
-%     \frac{\widetilde{\eta}}{\tau}
-%     \sum_{k=1}^{N} n_k^2,
-%     \qquad
-%     \widetilde{\eta}
-%     =
-%     \eta-\frac{1}{2}\gamma_{\mathrm{impact}}\tau .
-%     \label{eq:ac_linear_expected_cost}
-% \end{equation}
-% This expression shows the main trade-off. Faster trading reduces the remaining-inventory risk in Equation \eqref{eq:ac_variance}, but it increases the quadratic temporary-impact cost in Equation \eqref{eq:ac_linear_expected_cost}. Slower trading reduces immediate impact, but leaves the trader exposed to price movements for longer.
-
-% Almgren and Chriss define optimal execution through a mean--variance objective:
-% \begin{equation}
-%     \min_{x_1,\ldots,x_{N-1}}
-%     \;
-%     E(x)+\lambda V(x),
-%     \label{eq:ac_objective}
-% \end{equation}
-% subject to \(x_0=X\) and \(x_N=0\). The parameter \(\lambda\geq 0\) is the risk-aversion parameter. If \(\lambda=0\), the trader only minimises expected cost. If \(\lambda>0\), the trader accepts higher expected market-impact cost in order to reduce timing risk. Varying \(\lambda\) traces out an efficient frontier of strategies: each point on the frontier gives the minimum expected cost for a given level of execution-cost variance.
-
-% With linear impact, the objective is quadratic in the intermediate holdings. The first-order conditions imply the difference equation
-% \begin{equation}
-%     \frac{x_{j-1}-2x_j+x_{j+1}}{\tau^2}
-%     =
-%     \widetilde{\kappa}^{\,2}x_j,
-%     \qquad
-%     \widetilde{\kappa}^{\,2}
-%     =
-%     \frac{\lambda\sigma^2}{\widetilde{\eta}}.
-%     \label{eq:ac_difference_equation}
-% \end{equation}
-% The exact discrete parameter \(\kappa\) satisfies
-% \begin{equation}
-%     \frac{2}{\tau^2}
-%     \left(\cosh(\kappa\tau)-1\right)
-%     =
-%     \widetilde{\kappa}^{\,2},
-% \end{equation}
-% and for small \(\tau\),
-% \begin{equation}
-%     \kappa
-%     \approx
-%     \sqrt{\frac{\lambda\sigma^2}{\eta}}.
-%     \label{eq:ac_kappa}
-% \end{equation}
-% The optimal remaining-inventory path is
-% \begin{equation}
-%     x_j
-%     =
-%     X
-%     \frac{
-%         \sinh\left(\kappa(T-t_j)\right)
-%     }{
-%         \sinh\left(\kappa T\right)
-%     },
-%     \qquad
-%     j=0,\ldots,N.
-%     \label{eq:ac_optimal_holdings}
-% \end{equation}
-% The execution slices are then obtained from \(n_j=x_{j-1}-x_j\). When \(\lambda=0\), the limit of Equation \eqref{eq:ac_optimal_holdings} is the linear TWAP schedule,
-% \begin{equation}
-%     x_j
-%     =
-%     X\left(1-\frac{j}{N}\right),
-%     \qquad
-%     n_j
-%     =
-%     \frac{X}{N}.
-%     \label{eq:ac_twap}
-% \end{equation}
-% When \(\lambda>0\), the optimal path is front-loaded: the trader executes more at the beginning of the horizon to reduce exposure to future price volatility.
-
-% The parameter
-% \begin{equation}
-%     \theta=\frac{1}{\kappa}
-%     \label{eq:ac_characteristic_time}
-% \end{equation}
-% is the characteristic, or relaxation, execution time of the strategy. A small \(\theta\) means urgent execution, while a large \(\theta\) means slower execution. From Equation \eqref{eq:ac_kappa}, this characteristic time satisfies
-% \begin{equation}
-%     \theta
-%     \approx
-%     \sqrt{\frac{\eta}{\lambda\sigma^2}}.
-%     \label{eq:ac_characteristic_time_approx}
-% \end{equation}
-% The corresponding half-life is
-% \begin{equation}
-%     t_{1/2}
-%     =
-%     \theta\ln(2)
-%     =
-%     \frac{\ln(2)}{\kappa}
-%     \approx
-%     \ln(2)\sqrt{\frac{\eta}{\lambda\sigma^2}}.
-%     \label{eq:ac_half_life}
-% \end{equation}
-% Thus, higher volatility \(\sigma\) and higher risk aversion \(\lambda\) make the optimal strategy faster, while higher temporary impact \(\eta\) makes it slower.
-
-% For this thesis, the most important implication is that the Almgren--Chriss variance term has the same structure as a running quadratic penalty on remaining quantity. In the reinforcement-learning environment, let \(X_t\) denote the execution agent's unfinished quantity at time \(t\). A risk-sensitive execution reward can be written as
-% \begin{equation}
-%     r^{\mathrm{EX}}_t
-%     =
-%     r^{\mathrm{EX}}_{t,\mathrm{base}}
-%     -
-%     \rho_{\mathrm{EX}} X_t^2
-%     -
-%     \zeta_{\mathrm{EX}}\mathbf{1}_{\{t=T\}}|X_T|.
-%     \label{eq:ac_rl_reward_connection}
-% \end{equation}
-% The coefficient \(\rho_{\mathrm{EX}}\) is not numerically identical to the Almgren--Chriss parameter \(\lambda\), because the reinforcement-learning reward may be normalised and combined with other terms. However, both coefficients express the same economic idea: unfinished quantity creates risk, and larger unfinished quantities should be penalised more strongly. The terminal coefficient is denoted by \(\zeta_{\mathrm{EX}}\) here to avoid confusion with the Almgren--Chriss urgency parameter \(\kappa\).
-
-% The model also has limitations. It assumes independent arithmetic price increments, no directional signal, and market impact functions that are fixed and usually linear. It does not explicitly model queue position, latency, partial fills, hidden liquidity, cancellations, or strategic reactions by other agents. Therefore, in this thesis the Almgren--Chriss model is used primarily as theoretical motivation and as a classical benchmark, not as a full description of the high-frequency limit order book. Its main contribution is to formalise the execution trade-off between immediate market impact and delayed-execution risk, and to justify the squared remaining-quantity penalty used for the execution agent.
-
-
+Thus, \(Q_t\) and \(X_t\) are the risk variables inherited from classical market-making
+and execution theory, while \(\rho_{\mathrm{MM}}\) and \(\rho_{\mathrm{EX}}\) are the
+controlled experimental coefficients.
 
 
 \chapter{Methodologies}

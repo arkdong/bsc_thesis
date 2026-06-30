@@ -13,7 +13,12 @@
 \contentsline {section}{\numberline {2.4}LOB Simulation Frameworks and JaxMARL-HFT}{13}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Positioning of This Thesis}{14}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Theoretical background}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}The Avellaneda--Stoikov Market-Making Model}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Market Making}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}The Avellaneda--Stoikov Market-Making Model}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Order Execution in High-Frequency Trading}{15}{section.3.3}%
+\contentsline {section}{\numberline {3.4}The Almgren--Chriss Optimal-Execution Model}{16}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Reinforcement Learning and Independent PPO}{16}{section.3.5}%
+\contentsline {section}{\numberline {3.6}JaxMARL-HFT as the Experimental Environment}{16}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Methodologies}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Avellaneda--Stoikov Benchmark}{17}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Data Processing and Calibration}{17}{subsection.4.1.1}%
