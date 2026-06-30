@@ -1,0 +1,176 @@
+\begin{thebibliography}{10}
+
+\bibitem{alfonsi_optimal_2010}
+Aurélien Alfonsi, Antje Fruth, and Alexander Schied.
+\newblock Optimal execution strategies in limit order books with general shape functions.
+\newblock {\em Quantitative Finance}, 10(2):143--157, February 2010.
+\newblock \_eprint: https://doi.org/10.1080/14697680802595700.
+
+\bibitem{almgren2000}
+Robert Almgren and Neil Chriss.
+\newblock Optimal execution of portfolio transactions.
+\newblock {\em The Journal of Risk}, 3:5--39, 2000.
+
+\bibitem{amihud_dealership_1980}
+Yakov Amihud and Haim Mendelson.
+\newblock Dealership market: {Market}-making with inventory.
+\newblock {\em Journal of Financial Economics}, 8(1):31--53, March 1980.
+
+\bibitem{amrouni_abides-gym_2021}
+Selim Amrouni, Aymeric Moulin, Jared Vann, Svitlana Vyetrenko, Tucker Balch, and Manuela Veloso.
+\newblock {ABIDES}-{Gym}: {Gym} {Environments} for {Multi}-{Agent} {Discrete} {Event} {Simulation} and {Application} to {Financial} {Markets}, October 2021.
+
+\bibitem{ardon_towards_2021}
+Leo Ardon, Nelson Vadori, Thomas Spooner, Mengda Xu, Jared Vann, and Sumitra Ganesh.
+\newblock Towards a fully {RL}-based {Market} {Simulator}.
+\newblock In {\em Proceedings of the {Second} {ACM} {International} {Conference} on {AI} in {Finance}}, pages 1--9, November 2021.
+\newblock arXiv:2110.06829 [cs].
+
+\bibitem{avellaneda_high-frequency_2008}
+Marco Avellaneda and Sasha Stoikov.
+\newblock High-frequency trading in a limit order book.
+\newblock {\em Quantitative Finance}, 8(3):217--224, April 2008.
+
+\bibitem{belcak_fast_2020}
+Peter Belcak, Jan-Peter Calliess, and Stefan Zohren.
+\newblock Fast {Agent}-{Based} {Simulation} {Framework} with {Applications} to {Reinforcement} {Learning} and the {Study} of {Trading} {Latency} {Effects}, August 2020.
+
+\bibitem{bertsimas_optimal_1998}
+Dimitris Bertsimas and Andrew~W. Lo.
+\newblock Optimal control of execution costs.
+\newblock {\em Journal of Financial Markets}, 1(1):1--50, April 1998.
+
+\bibitem{byrd_abides_nodate}
+David Byrd, Maria Hybinette, and Tucker~Hybinette Balch.
+\newblock {ABIDES}: {TOWARDS} {HIGH}-{FIDELITY} {MARKET} {SIMULATION} {FOR} {AI} {RESEARCH}.
+
+\bibitem{chan_electronic_2001}
+Nicholas~Tung Chan and Christian Shelton.
+\newblock An {Electronic} {Market}-{Maker}.
+\newblock April 2001.
+\newblock Accepted: 2004-10-20T20:50:09Z.
+
+\bibitem{frey_jax-lob_2023}
+Sascha Frey, Kang Li, Peer Nagy, Silvia Sapora, Chris Lu, Stefan Zohren, Jakob Foerster, and Anisoara Calinescu.
+\newblock {JAX}-{LOB}: {A} {GPU}-{Accelerated} limit order book simulator to unlock large scale reinforcement learning for trading, August 2023.
+
+\bibitem{ganesh_reinforcement_2019}
+Sumitra Ganesh, Nelson Vadori, Mengda Xu, Hua Zheng, Prashant Reddy, and Manuela Veloso.
+\newblock Reinforcement {Learning} for {Market} {Making} in a {Multi}-agent {Dealer} {Market}, November 2019.
+\newblock arXiv:1911.05892 [q-fin].
+
+\bibitem{garman_market_1976}
+Mark~B. Garman.
+\newblock Market microstructure.
+\newblock {\em Journal of Financial Economics}, 3(3):257--275, June 1976.
+
+\bibitem{gasperov_reinforcement_2021}
+Bruno Gašperov, Stjepan Begušić, Petra Posedel~Šimović, and Zvonko Kostanjčar.
+\newblock Reinforcement {Learning} {Approaches} to {Optimal} {Market} {Making}.
+\newblock {\em Mathematics}, 9(21):2689, January 2021.
+
+\bibitem{guo_market_2023}
+Hong Guo, Jianwu Lin, and Fanlin Huang.
+\newblock Market {Making} with {Deep} {Reinforcement} {Learning} from {Limit} {Order} {Books}, May 2023.
+\newblock arXiv:2305.15821 [q-fin].
+
+\bibitem{gueant_dealing_2013}
+Olivier Guéant, Charles-Albert Lehalle, and Joaquin Fernandez-Tapia.
+\newblock Dealing with the inventory risk: a solution to the market making problem.
+\newblock {\em Mathematics and Financial Economics}, 7(4):477--507, September 2013.
+
+\bibitem{hendricks_reinforcement_2014}
+Dieter Hendricks and Diane Wilcox.
+\newblock A reinforcement learning extension to the {Almgren}-{Chriss} model for optimal trade execution.
+\newblock In {\em 2014 {IEEE} {Conference} on {Computational} {Intelligence} for {Financial} {Engineering} \& {Economics} ({CIFEr})}, pages 457--464, March 2014.
+\newblock arXiv:1403.2229 [q-fin].
+
+\bibitem{ho_optimal_1981}
+Thomas Ho and Hans~R. Stoll.
+\newblock Optimal dealer pricing under transactions and return uncertainty.
+\newblock {\em Journal of Financial Economics}, 9(1):47--73, March 1981.
+
+\bibitem{karpe_multi-agent_2020}
+Michaël Karpe, Jin Fang, Zhongyao Ma, and Chen Wang.
+\newblock Multi-{Agent} {Reinforcement} {Learning} in a {Realistic} {Limit} {Order} {Book} {Market} {Simulation}.
+\newblock In {\em Proceedings of the {First} {ACM} {International} {Conference} on {AI} in {Finance}}, pages 1--7, October 2020.
+\newblock arXiv:2006.05574 [q-fin].
+
+\bibitem{kumar_deep_2020}
+Pankaj Kumar.
+\newblock Deep {Reinforcement} {Learning} for {Market} {Making}.
+\newblock {\em New Zealand}, 2020.
+
+\bibitem{lim_reinforcement_nodate}
+Ye-Sheen Lim and Denise Gorse.
+\newblock Reinforcement {Learning} for {High}-{Frequency} {Market} {Making}.
+
+\bibitem{lin_end--end_2020}
+Siyu Lin and Peter~A. Beling.
+\newblock An {End}-to-{End} {Optimal} {Trade} {Execution} {Framework} based on {Proximal} {Policy} {Optimization}.
+\newblock In {\em Proceedings of the {Twenty}-{Ninth} {International} {Joint} {Conference} on {Artificial} {Intelligence}}, pages 4548--4554, Yokohama, Japan, July 2020. International Joint Conferences on Artificial Intelligence Organization.
+
+\bibitem{lussange_modelling_2021}
+Johann Lussange, Ivan Lazarevich, Sacha Bourgeois-Gironde, Stefano Palminteri, and Boris Gutkin.
+\newblock Modelling {Stock} {Markets} by {Multi}-agent {Reinforcement} {Learning}.
+\newblock {\em Computational Economics}, 57(1):113--147, January 2021.
+
+\bibitem{mascioli_financial_2024}
+Chris Mascioli, Anri Gu, Yongzhao Wang, Mithun Chakraborty, and Michael Wellman.
+\newblock A {Financial} {Market} {Simulation} {Environment} for {Trading} {Agents} {Using} {Deep} {Reinforcement} {Learning}.
+\newblock In {\em Proceedings of the 5th {ACM} {International} {Conference} on {AI} in {Finance}}, pages 117--125, Brooklyn NY USA, November 2024. ACM.
+
+\bibitem{moallemi_reinforcement_2021}
+Ciamac~C. Moallemi and Muye Wang.
+\newblock A {Reinforcement} {Learning} {Approach} to {Optimal} {Execution}, November 2021.
+
+\bibitem{mohl_jaxmarl-hft_2025}
+Valentin Mohl, Sascha Frey, Reuben Leyland, Kang Li, George Nigmatulin, Mihai Cucuringu, Stefan Zohren, Jakob Foerster, and Anisoara Calinescu.
+\newblock {JaxMARL}-{HFT}: {GPU}-{Accelerated} {Large}-{Scale} {Multi}-{Agent} {Reinforcement} {Learning} for {High}-{Frequency} {Trading}, November 2025.
+\newblock arXiv:2511.02136 [q-fin].
+
+\bibitem{nevmyvaka_reinforcement_2006}
+Yuriy Nevmyvaka, Yi~Feng, and Michael Kearns.
+\newblock Reinforcement learning for optimized trade execution.
+\newblock In {\em Proceedings of the 23rd international conference on {Machine} learning - {ICML} '06}, pages 673--680, Pittsburgh, Pennsylvania, 2006. ACM Press.
+
+\bibitem{ning_double_2020}
+Brian Ning, Franco Ho~Ting Lin, and Sebastian Jaimungal.
+\newblock Double {Deep} {Q}-{Learning} for {Optimal} {Execution}, June 2020.
+\newblock arXiv:1812.06600 [q-fin].
+
+\bibitem{obizhaeva_optimal_2005}
+Anna Obizhaeva and Jiang Wang.
+\newblock Optimal {Trading} {Strategy} and {Supply}/{Demand} {Dynamics}, June 2005.
+
+\bibitem{rutherford_jaxmarl_2023}
+Alexander Rutherford, Benjamin Ellis, Matteo Gallici, Jonathan Cook, Andrei Lupu, Gardar Ingvarsson, Timon Willi, Ravi Hammond, Akbir Khan, Christian~Schroeder de~Witt, Alexandra Souly, Saptarashmi Bandyopadhyay, Mikayel Samvelyan, Minqi Jiang, Robert~Tjarko Lange, Shimon Whiteson, Bruno Lacerda, Nick Hawes, Tim Rocktaschel, Chris Lu, and Jakob~Nicolaus Foerster.
+\newblock {JaxMARL}: {Multi}-{Agent} {RL} {Environments} and {Algorithms} in {JAX}, November 2023.
+
+\bibitem{spooner_market_2018}
+Thomas Spooner, John Fearnley, Rahul Savani, and Andreas Koukorinis.
+\newblock Market {Making} via {Reinforcement} {Learning}, April 2018.
+\newblock arXiv:1804.04216 [cs].
+
+\bibitem{vadori_towards_2023}
+Nelson Vadori, Leo Ardon, Sumitra Ganesh, Thomas Spooner, Selim Amrouni, Jared Vann, Mengda Xu, Zeyu Zheng, Tucker Balch, and Manuela Veloso.
+\newblock Towards {Multi}-{Agent} {Reinforcement} {Learning} driven {Over}-{The}-{Counter} {Market} {Simulations}, August 2023.
+\newblock arXiv:2210.07184 [cs].
+
+\bibitem{vicente_deep_2021}
+Oscar~Fernández Vicente, Fernando~Fernández Rebollo, and Francisco Javier~García Polo.
+\newblock Deep {Q}-{Learning} {Market} {Makers} in a {Multi}-{Agent} {Simulated} {Stock} {Market}.
+\newblock In {\em Proceedings of the {Second} {ACM} {International} {Conference} on {AI} in {Finance}}, pages 1--9, November 2021.
+\newblock arXiv:2112.04494 [cs].
+
+\bibitem{vicente_automated_2023}
+Óscar~Fernández Vicente, Fernando Fernández, and Javier García.
+\newblock Automated market maker inventory management with deep reinforcement learning.
+\newblock {\em Applied Intelligence}, 53(19):22249--22266, October 2023.
+
+\bibitem{yao_reinforcement_2024}
+Zhiyuan Yao, Zheng Li, Matthew Thomas, and Ionut Florescu.
+\newblock Reinforcement {Learning} in {Agent}-{Based} {Market} {Simulation}: {Unveiling} {Realistic} {Stylized} {Facts} and {Behavior}, March 2024.
+\newblock arXiv:2403.19781 [q-fin].
+
+\end{thebibliography}

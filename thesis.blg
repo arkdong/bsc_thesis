@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99e (TeX Live 2026/Homebrew)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--empty journal in byrd_abides_nodate
+Warning--empty year in byrd_abides_nodate
+Warning--empty journal in chan_electronic_2001
+Warning--empty journal in lim_reinforcement_nodate
+Warning--empty year in lim_reinforcement_nodate
+You've used 35 entries,
+            2118 wiz_defined-function locations,
+            690 strings with 11705 characters,
+and the built_in function-call counts, 13010 in all, are:
+= -- 1209
+> -- 818
+< -- 7
++ -- 326
+- -- 286
+* -- 997
+:= -- 2161
+add.period$ -- 106
+call.type$ -- 35
+change.case$ -- 248
+chr.to.int$ -- 0
+cite$ -- 40
+duplicate$ -- 403
+empty$ -- 908
+format.name$ -- 286
+if$ -- 2654
+int.to.chr$ -- 0
+int.to.str$ -- 35
+missing$ -- 22
+newline$ -- 176
+num.names$ -- 70
+pop$ -- 313
+preamble$ -- 1
+purify$ -- 213
+quote$ -- 0
+skip$ -- 329
+stack$ -- 0
+substring$ -- 608
+swap$ -- 89
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 140
+warning$ -- 5
+while$ -- 112
+width$ -- 37
+write$ -- 369
+(There were 5 warnings)
